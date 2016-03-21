@@ -7,6 +7,7 @@ angular.module('myApp', [
     'myApp.home',
     'myApp.account',
     'myApp.chat',
+    'myApp.createFeedItem',
     'myApp.login'
   ])
   .config(['$routeProvider', function ($routeProvider) {
