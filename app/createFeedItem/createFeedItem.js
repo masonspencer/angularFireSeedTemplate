@@ -3,24 +3,24 @@
 
   var app = angular.module('myApp.createFeedItem', ['ngRoute', 'firebase.utils', 'firebase']);
 
-  app.controller('ChatCtrl', ['$scope', 'messageList', function($scope, messageList) {
-      $scope.messages = messageList;
-      $scope.addMessage = function(newMessage) {
-        if( newMessage ) {
-          $scope.messages.$add({text: newMessage});
+  app.controller('createFeedItemtCtrl', ['$scope', 'geerItems', function($scope, geerItems) {
+      $scope.geerItem = geerItems;
+      $scope.addgeerItems = function(newgeerItems) {
+        if( newgeerItems ) {
+          $scope.geerItems.$add({text: newgeerItems});
         }
       };
     }]);
 
-  app.factory('messageList', ['fbutil', '$firebaseArray', function(fbutil, $firebaseArray) {
-    var ref = fbutil.ref('messages').limitToLast(10);
+  app.factory('geerItems', ['fbutil', '$firebaseArray', function(fbutil, $firebaseArray) {
+    var ref = fbutil.ref('geerItem').limitToLast(10);
     return $firebaseArray(ref);
   }]);
 
   app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/createFeedItem', {
       templateUrl: 'createFeedItem/createFeedItem.html',
-      controller: 'ChatCtrl'
+      controller: 'createFeedItemCtrl'
     });
   }]);
 

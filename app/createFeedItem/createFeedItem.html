@@ -1,10 +1,10 @@
 <h2>Chat</h2>
 
 <form>
-  <input placeholder="Message..." ng-model="newMessage">
-  <button type="submit" ng-click="addMessage(newMessage);newMessage = null;">send</button>
+  <input placeholder="geerItem..." ng-model="newgeerItems">
+  <button type="submit" ng-click="addgeerItems(newgeerItems);newgeerItems = null;">send</button>
 </form>
 
-<ul id="messages" ng-show="messages.length">
-    <li ng-repeat="message in messages | reverse">{{message.text}}</li>
+<ul id="geerItems" ng-show="geerItems.length">
+    <li ng-repeat="geerItem in geerItems | reverse">{{geerItem.text}}</li>
 </ul>
